@@ -1,0 +1,8 @@
+[package]
+name = "cross_entropy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = []

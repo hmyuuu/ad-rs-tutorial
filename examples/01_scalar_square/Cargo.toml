@@ -1,0 +1,8 @@
+[package]
+name = "scalar_square"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = []

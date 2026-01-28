@@ -1,0 +1,8 @@
+[package]
+name = "linear_layer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = []

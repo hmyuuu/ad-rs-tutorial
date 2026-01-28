@@ -1,0 +1,14 @@
+[book]
+title = "Rust Autodiff Tutorial"
+authors = ["hmyuuu"]
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "rust"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/hmyuuu/ad-rs-tutorial"
+edit-url-template = "https://github.com/hmyuuu/ad-rs-tutorial/edit/main/docs/{path}"

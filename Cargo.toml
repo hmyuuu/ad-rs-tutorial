@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "examples/01_scalar_square",
+    "examples/02_scalar_sin",
+    "examples/03_multi_variable",
+    "examples/04_rosenbrock",
+    "examples/05_vector_dot",
+    "examples/06_vector_norm",
+    "examples/07_mse_loss",
+    "examples/08_cross_entropy",
+    "examples/09_linear_layer",
+    "examples/10_forward_mode",
+    "examples/11_activity_demo",
+    "examples/12_control_flow",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["hmyuuu"]
+repository = "https://github.com/hmyuuu/ad-rs-tutorial"
+
+[profile.dev]
+lto = "fat"
+
+[profile.release]
+lto = "fat"
