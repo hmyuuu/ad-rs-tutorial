@@ -16,29 +16,6 @@ This tutorial teaches automatic differentiation from the ground up, assuming no 
 - Activity annotations (`Active`, `Const`, `Duplicated`)
 - Practical examples from simple scalars to neural network layers
 
-## Prerequisites
-
-- Rust nightly toolchain with Enzyme backend
-- Basic Rust knowledge
-
-## Setup
-
-### Option 1: Use Pre-built Enzyme Toolchain (Recommended)
-
-If you have access to a pre-built Enzyme toolchain:
-
-```bash
-# Add the enzyme toolchain
-rustup toolchain link enzyme /path/to/enzyme-toolchain
-
-# Verify it works
-RUSTFLAGS="-Z autodiff=Enable" cargo +enzyme build
-```
-
-### Option 2: Build from Source
-
-See [rust-lang/rust#124509](https://github.com/rust-lang/rust/issues/124509) for instructions on building rustc with Enzyme support.
-
 ## Project Structure
 
 ```
@@ -61,6 +38,29 @@ ad-rs-tutorial/
 │   └── 14_quantum_control/  # Quantum optimal control
 └── Cargo.toml               # Workspace configuration
 ```
+
+## Prerequisites
+
+- Rust nightly toolchain with Enzyme backend
+- Basic Rust knowledge
+
+## Setup
+
+### Option 1: Use Pre-built Enzyme Toolchain (Recommended)
+
+If you have access to a pre-built Enzyme toolchain:
+
+```bash
+# Add the enzyme toolchain
+rustup toolchain link enzyme /path/to/enzyme-toolchain
+
+# Verify it works
+RUSTFLAGS="-Z autodiff=Enable" cargo +enzyme build
+```
+
+### Option 2: Build from Source
+
+See [rust-lang/rust#124509](https://github.com/rust-lang/rust/issues/124509) for instructions on building rustc with Enzyme support.
 
 ## Running Examples
 
