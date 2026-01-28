@@ -14,7 +14,7 @@ This tutorial teaches automatic differentiation from the ground up, assuming no 
 - Forward mode vs reverse mode AD
 - How to use Rust's `#[autodiff]` attribute
 - Activity annotations (`Active`, `Const`, `Duplicated`)
-- Practical examples from neural network layers to quantum optimal control
+- Practical examples from `neural network layers` to `quantum optimal control`
 
 ## Project Structure
 
