@@ -56,7 +56,9 @@ ad-rs-tutorial/
 │   ├── 09_linear_layer/     # Neural network layer
 │   ├── 10_forward_mode/     # Forward mode AD
 │   ├── 11_activity_demo/    # All activity annotations
-│   └── 12_control_flow/     # if/else, loops
+│   ├── 12_control_flow/     # if/else, loops
+│   ├── 13_complex_function/ # Complex number operations
+│   └── 14_quantum_control/  # Quantum optimal control
 └── Cargo.toml               # Workspace configuration
 ```
 
@@ -92,6 +94,8 @@ make run-all
 | `forward_mode` | Forward mode AD |
 | `activity_demo` | Activity annotations demo |
 | `control_flow` | Control flow (if/else, loops) |
+| `complex_function` | Complex number differentiation |
+| `quantum_control` | Quantum optimal control (>99.99% fidelity) |
 
 ## Important: Enzyme Limitations
 
