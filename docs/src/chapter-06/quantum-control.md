@@ -4,49 +4,28 @@ This example uses autodiff to find control pulses that implement high-fidelity q
 
 ## Problem Setup
 
-A driven qubit evolves under:
+**Hamiltonian:**
 
 \\[ H(t) = \frac{\omega_0}{2}\sigma_z + \frac{\Omega(t)}{2}\sigma_x \\]
 
 where \\(\omega_0\\) is the drift frequency and \\(\Omega(t)\\) is the control amplitude.
 
-For small time steps, the evolution factorizes as \\(U \approx R_z(\omega_0 \Delta t) \cdot R_x(\Omega \Delta t)\\), where:
+**Time evolution:**
 
-\\[ R_x(\theta) = \begin{pmatrix} \cos(\theta/2) & -i\sin(\theta/2) \\\\ -i\sin(\theta/2) & \cos(\theta/2) \end{pmatrix}, \quad R_z(\theta) = \begin{pmatrix} e^{-i\theta/2} & 0 \\\\ 0 & e^{i\theta/2} \end{pmatrix} \\]
+\\[ U = e^{-i(\mathbf{n}\cdot\boldsymbol{\sigma})\theta/2} = \cos(\theta/2)I - i\sin(\theta/2)(\mathbf{n}\cdot\boldsymbol{\sigma}) \\]
 
-We minimize the infidelity \\(1 - F\\) where \\(F = |\langle\psi_{\text{target}}|\psi_{\text{final}}\rangle|^2\\).
+where \\(\theta = \sqrt{\omega_0^2 + \Omega^2}\Delta t\\) and \\(\mathbf{n} = (\Omega, 0, \omega_0)/\sqrt{\omega_0^2 + \Omega^2}\\).
 
-## Implementation
-
-Qubit states are stored as `[Re(c0), Im(c0), Re(c1), Im(c1)]`:
-
-```rust
-#[autodiff_reverse(d_infidelity, Duplicated, Active)]
-fn infidelity(controls: &[f64; N_STEPS]) -> f64 {
-    let mut state = [1.0, 0.0, 0.0, 0.0]; // |0⟩
-
-    let mut i = 0;
-    while i < N_STEPS {
-        apply_rz(&mut state, omega0);
-        apply_rx(&mut state, controls[i]);
-        i += 1;
-    }
-
-    // 1 - |⟨target|state⟩|²
-    let overlap_re = target[2] * state[2] + target[3] * state[3];
-    let overlap_im = target[2] * state[3] - target[3] * state[2];
-    1.0 - (overlap_re * overlap_re + overlap_im * overlap_im)
-}
-```
+**Objective:** Minimize infidelity \\(1 - F\\) where \\(F = |\langle\psi_{\text{target}}|\psi_{\text{final}}\rangle|^2\\).
 
 ## Results
 
-With 8 time steps and 500 Adam iterations:
+With `N_STEPS = 100`, `N_ITERS = 200`:
 
 | Metric | Value |
 |--------|-------|
-| Final fidelity | **99.9994%** |
-| Total pulse area | 3.134 ≈ π |
+| Final fidelity | **>99.99%** |
+| Total pulse area | 3.09 ≈ π |
 
 ## Run
 
