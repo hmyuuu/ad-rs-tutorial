@@ -12,3 +12,4 @@ default-theme = "rust"
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/hmyuuu/ad-rs-tutorial"
 edit-url-template = "https://github.com/hmyuuu/ad-rs-tutorial/edit/main/docs/{path}"
+mathjax-support = true
