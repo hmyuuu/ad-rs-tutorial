@@ -13,6 +13,7 @@ f'(x) ≈ (f(x + h) - f(x)) / h
 ```
 
 **Pros**: Simple to implement, works for any function
+
 **Cons**: Approximation errors, numerical instability, slow for many variables
 
 ### 2. Symbolic Differentiation
@@ -25,6 +26,7 @@ f'(x) = 2x + cos(x)
 ```
 
 **Pros**: Exact results, human-readable expressions
+
 **Cons**: Expression swell (derivatives can be much larger than original), can't handle control flow
 
 ### 3. Automatic Differentiation
