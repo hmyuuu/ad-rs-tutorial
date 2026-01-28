@@ -34,11 +34,11 @@ f'(x) = 2x + cos(x)
 Decompose the function into elementary operations and apply the chain rule:
 
 ```rust
-// f(x) = x² + sin(x)
-// Decomposed:
-// v₁ = x * x      // d(v₁)/dx = 2x
-// v₂ = sin(x)    // d(v₂)/dx = cos(x)
-// y = v₁ + v₂    // dy/dx = d(v₁)/dx + d(v₂)/dx = 2x + cos(x)
+f(x) = x² + sin(x)
+//Decomposed:
+v₁ = x * x      // d(v₁)/dx = 2x
+v₂ = sin(x)    // d(v₂)/dx = cos(x)
+y = v₁ + v₂    // dy/dx = d(v₁)/dx + d(v₂)/dx = 2x + cos(x)
 ```
 
 **Pros**: Exact (to machine precision), efficient, handles control flow
