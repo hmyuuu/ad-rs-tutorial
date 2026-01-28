@@ -61,5 +61,9 @@ fn main() {
     // With dx=0.5, we compute (df/dx) * 0.5
     let (_, dy_half) = d_cubic(x, 0.5);
     println!("(df/dx) * 0.5 = {dy_half}");
-    println!("Expected: {} * 0.5 = {}", 3.0 * x * x + 2.0, (3.0 * x * x + 2.0) * 0.5);
+    println!(
+        "Expected: {} * 0.5 = {}",
+        3.0 * x * x + 2.0,
+        (3.0 * x * x + 2.0) * 0.5
+    );
 }

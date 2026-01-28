@@ -46,9 +46,7 @@ fn main() {
 
         // Print progress every 2000 iterations
         if i % 2000 == 0 || i == iterations - 1 {
-            println!(
-                "Iteration {i:5}: f = {f_val:.6}, x = {x:.4}, y = {y:.4}"
-            );
+            println!("Iteration {i:5}: f = {f_val:.6}, x = {x:.4}, y = {y:.4}");
         }
     }
 

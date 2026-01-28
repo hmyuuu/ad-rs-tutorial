@@ -65,7 +65,11 @@ fn exp_approx(x: f64) -> f64 {
 /// f'(x) = 1 if x > 0, else 0
 #[autodiff_reverse(d_relu, Active, Active)]
 fn relu(x: f64) -> f64 {
-    if x > 0.0 { x } else { 0.0 }
+    if x > 0.0 {
+        x
+    } else {
+        0.0
+    }
 }
 
 fn main() {

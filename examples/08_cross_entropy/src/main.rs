@@ -42,7 +42,13 @@ fn bce_loss(pred: &[f64], target: &[f64]) -> f64 {
         let p = pred[i];
         let t = target[i];
         // Clamp p to avoid log(0)
-        let p_clamped = if p < eps { eps } else if p > 1.0 - eps { 1.0 - eps } else { p };
+        let p_clamped = if p < eps {
+            eps
+        } else if p > 1.0 - eps {
+            1.0 - eps
+        } else {
+            p
+        };
         sum += -(t * my_ln(p_clamped) + (1.0 - t) * my_ln(1.0 - p_clamped));
         i += 1;
     }
