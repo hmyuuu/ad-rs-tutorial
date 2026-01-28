@@ -14,13 +14,13 @@ This tutorial teaches automatic differentiation from the ground up, assuming no 
 - Forward mode vs reverse mode AD
 - How to use Rust's `#[autodiff]` attribute
 - Activity annotations (`Active`, `Const`, `Duplicated`)
-- Practical examples from simple scalars to neural network layers
+- Practical examples from neural network layers to quantum optimal control
 
 ## Project Structure
 
 ```
 ad-rs-tutorial/
-├── docs/                    # mdBook documentation
+├── docs/                    # mdBook tutorial
 ├── examples/
 │   ├── 01_scalar_square/    # f(x) = x²
 │   ├── 02_scalar_sin/       # f(x) = sin(x)
