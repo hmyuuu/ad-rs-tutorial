@@ -1,8 +1,11 @@
 .PHONY: build test docs docs-serve lint clean fmt check
 
+# Toolchain with Enzyme support
+TOOLCHAIN ?= +enzyme
+
 # Build all examples
 build:
-	RUSTFLAGS="-Z autodiff=Enable" cargo build --workspace
+	RUSTFLAGS="-Z autodiff=Enable" cargo $(TOOLCHAIN) build --workspace
 
 # Run all examples
 run-all:
@@ -10,13 +13,13 @@ run-all:
 		05_vector_dot 06_vector_norm 07_mse_loss 08_cross_entropy \
 		09_linear_layer 10_forward_mode 11_activity_demo 12_control_flow; do \
 		echo "Running $$example..."; \
-		RUSTFLAGS="-Z autodiff=Enable" cargo run -p $$(echo $$example | sed 's/^[0-9]*_//') || exit 1; \
+		RUSTFLAGS="-Z autodiff=Enable" cargo $(TOOLCHAIN) run -p $$(echo $$example | sed 's/^[0-9]*_//') || exit 1; \
 		echo ""; \
 	done
 
 # Run tests
 test:
-	RUSTFLAGS="-Z autodiff=Enable" cargo test --workspace
+	RUSTFLAGS="-Z autodiff=Enable" cargo $(TOOLCHAIN) test --workspace
 
 # Build documentation
 docs:
