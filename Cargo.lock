@@ -7,6 +7,10 @@ name = "activity_demo"
 version = "0.1.0"
 
 [[package]]
+name = "complex_function"
+version = "0.1.0"
+
+[[package]]
 name = "control_flow"
 version = "0.1.0"
 
@@ -28,6 +32,10 @@ version = "0.1.0"
 
 [[package]]
 name = "multi_variable"
+version = "0.1.0"
+
+[[package]]
+name = "quantum_control"
 version = "0.1.0"
 
 [[package]]

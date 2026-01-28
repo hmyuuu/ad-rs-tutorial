@@ -36,6 +36,8 @@
   - [Vector Operations](chapter-06/vector-operations.md)
   - [Loss Functions](chapter-06/loss-functions.md)
   - [Neural Network Layers](chapter-06/neural-network.md)
+  - [Complex Functions](chapter-06/complex-functions.md)
+  - [Quantum Optimal Control](chapter-06/quantum-control.md)
 
 - [Advanced Topics](chapter-07/index.md)
   - [Control Flow](chapter-07/control-flow.md)

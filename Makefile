@@ -11,7 +11,8 @@ build:
 run-all:
 	@for example in 01_scalar_square 02_scalar_sin 03_multi_variable 04_rosenbrock \
 		05_vector_dot 06_vector_norm 07_mse_loss 08_cross_entropy \
-		09_linear_layer 10_forward_mode 11_activity_demo 12_control_flow; do \
+		09_linear_layer 10_forward_mode 11_activity_demo 12_control_flow \
+		13_complex_function 14_quantum_control; do \
 		echo "Running $$example..."; \
 		RUSTFLAGS="-Z autodiff=Enable" cargo $(TOOLCHAIN) run -p $$(echo $$example | sed 's/^[0-9]*_//') || exit 1; \
 		echo ""; \

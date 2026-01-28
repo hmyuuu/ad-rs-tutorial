@@ -8,5 +8,7 @@ You'll see:
 - Vector operations (dot product, norms)
 - Loss functions (MSE, cross-entropy)
 - Neural network layer gradients
+- Complex composed functions
+- Quantum optimal control
 
 Each example includes complete code that you can run from the `examples/` directory.

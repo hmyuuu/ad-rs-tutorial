@@ -13,6 +13,8 @@ members = [
     "examples/10_forward_mode",
     "examples/11_activity_demo",
     "examples/12_control_flow",
+    "examples/13_complex_function",
+    "examples/14_quantum_control",
 ]
 
 [workspace.package]
