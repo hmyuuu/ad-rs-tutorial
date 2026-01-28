@@ -116,7 +116,10 @@ fn main() {
     println!("Quantum Optimal Control with Autodiff");
     println!("======================================\n");
     println!("Goal: Find control pulses to implement X gate (|0⟩ → |1⟩)");
-    println!("Method: Exact propagator (no Trotter error), {} steps\n", N_STEPS);
+    println!(
+        "Method: Exact propagator (no Trotter error), {} steps\n",
+        N_STEPS
+    );
 
     let pi = std::f64::consts::PI;
     let mut controls = [1.0; N_STEPS]; // Small initial perturbation
@@ -161,7 +164,11 @@ fn main() {
     let final_fidelity = 1.0 - final_infid;
 
     println!("Final fidelity: {:.10}", final_fidelity);
-    println!("Total pulse area: {:.6} (target π = {:.6})", controls.iter().sum::<f64>() * DT, pi);
+    println!(
+        "Total pulse area: {:.6} (target π = {:.6})",
+        controls.iter().sum::<f64>() * DT,
+        pi
+    );
 
     println!("\n--- Verification ---");
     if final_fidelity > 0.9999 {
@@ -172,4 +179,3 @@ fn main() {
         println!("Need more optimization iterations");
     }
 }
-
